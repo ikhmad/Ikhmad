@@ -3,288 +3,529 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="IKHMAD — Wildfire Intelligence, Coordination & Evacuation Platform. High-fidelity prototype for citizen safety and emergency command coordination.">
-  <meta name="theme-color" content="#111827">
+
   <title>IKHMAD | Wildfire Intelligence & Evacuation</title>
+
+  <meta
+    name="description"
+    content="IKHMAD — Wildfire Intelligence, Coordination & Evacuation Platform for citizen safety and emergency command coordination."
+  >
+  <meta name="theme-color" content="#0D1B2A">
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="assets/branding/logo-2.png"
+  >
+
   <link rel="stylesheet" href="website.css">
 </head>
+
 <body>
-  <header class="nav-wrap">
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="IKHMAD home">
-        <span class="brand-mark">🔥</span>
-        <span>
-          <strong>IKHMAD</strong>
-          <small>إخماد</small>
-        </span>
-      </a>
-      <div class="nav-links">
-        <a href="#solution">Solution</a>
-        <a href="#prototype">Prototype</a>
-        <a href="#technology">Technology</a>
-        <a href="#roadmap">Roadmap</a>
-      </div>
-      <a class="button button-small button-ghost" href="README.md">Technical project</a>
+
+<header class="site-header">
+  <div class="container nav">
+
+    <a class="brand" href="#top" aria-label="IKHMAD home">
+      <img
+        src="assets/branding/logo-1.png"
+        alt="IKHMAD — إخماد"
+        class="brand-logo"
+      >
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#solution">Solution</a>
+      <a href="#prototype">Prototype</a>
+      <a href="#command-center">Command Center</a>
+      <a href="#technology">Technology</a>
+      <a href="#roadmap">Roadmap</a>
     </nav>
-  </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">Wildfire intelligence · coordination · evacuation</div>
-          <h1>From first observation to safer evacuation.</h1>
-          <p class="hero-lead">
-            IKHMAD connects citizens and emergency operators through a shared wildfire
-            operational picture — combining reporting, verification, alerts, SOS and
-            evacuation decision support in one platform.
-          </p>
+    <a class="button button-small button-outline" href="README.md">
+      Technical project
+    </a>
 
-          <div class="hero-actions">
-            <a class="button" href="#prototype">Explore the prototype</a>
-            <a class="button button-secondary" href="README.md">View technical project</a>
-          </div>
+  </div>
+</header>
 
-          <div class="status-row">
-            <span class="status-dot"></span>
-            <strong>Current stage:</strong>
-            <span>High-fidelity interactive prototype · Pre-MVP</span>
-          </div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          Wildfire intelligence · coordination · evacuation
         </div>
 
-        <div class="hero-visual" aria-label="IKHMAD citizen application preview">
-          <div class="phone-card phone-back">
-            <img src="assets/screenshots/mobile/incident-details.png" alt="IKHMAD incident details screen">
-          </div>
-          <div class="phone-card phone-front">
-            <img src="assets/screenshots/mobile/fire-map.png" alt="IKHMAD wildfire map screen">
-          </div>
-        </div>
-      </div>
-    </section>
+        <img
+          class="hero-logo"
+          src="assets/branding/logo-1.png"
+          alt="IKHMAD"
+        >
 
-    <section class="trust-strip">
-      <div class="container trust-items">
-        <span>Citizen reporting</span>
-        <span>Professional validation</span>
-        <span>Operational alerts</span>
-        <span>Evacuation support</span>
-        <span>SOS coordination</span>
-      </div>
-    </section>
+        <h1>
+          From first observation to safer evacuation.
+        </h1>
 
-    <section class="section" id="solution">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">The problem</span>
-          <h2>Wildfire information is fragmented when every minute matters.</h2>
-          <p>
-            Citizens may see smoke before official confirmation. Operators receive observations
-            from different channels. Road conditions can change while people are already moving.
-            IKHMAD is designed to connect these pieces into one coordinated emergency workflow.
-          </p>
+        <p class="hero-lead">
+          IKHMAD connects citizens and emergency operators through a shared
+          wildfire operational picture — combining reporting, verification,
+          alerts, SOS and evacuation decision support in one platform.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button" href="#prototype">
+            Explore the prototype
+          </a>
+
+          <a class="button button-secondary" href="README.md">
+            View technical project
+          </a>
         </div>
 
-        <div class="flow-grid">
-          <article class="flow-card">
-            <div class="number">01</div>
-            <h3>Report</h3>
-            <p>Citizens and external sources contribute observations with location and context.</p>
-          </article>
-          <article class="flow-card">
-            <div class="number">02</div>
-            <h3>Verify</h3>
-            <p>Reports remain distinct from confirmed incidents and are reviewed by operators.</p>
-          </article>
-          <article class="flow-card">
-            <div class="number">03</div>
-            <h3>Assess</h3>
-            <p>IKHMAD's planned intelligence layer supports multi-source risk assessment.</p>
-          </article>
-          <article class="flow-card">
-            <div class="number">04</div>
-            <h3>Alert</h3>
-            <p>Citizens receive clear incident information and official safety instructions.</p>
-          </article>
-          <article class="flow-card">
-            <div class="number">05</div>
-            <h3>Evacuate</h3>
-            <p>Future capability evaluates safer routes and destinations as conditions evolve.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-dark" id="prototype">
-      <div class="container">
-        <div class="section-heading light">
-          <span class="eyebrow">Citizen experience</span>
-          <h2>A single emergency journey, from awareness to action.</h2>
-          <p>
-            The current prototype demonstrates the key citizen flows using synthetic and
-            demonstration data.
-          </p>
+        <div class="status-row">
+          <span class="status-dot"></span>
+          <strong>Current stage:</strong>
+          <span>High-fidelity interactive prototype · Pre-MVP</span>
         </div>
 
-        <div class="mobile-gallery">
-          <figure>
-            <img src="assets/screenshots/mobile/fire-map.png" alt="Wildfire map">
-            <figcaption>Situational awareness</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/mobile/incident-details.png" alt="Confirmed wildfire incident details">
-            <figcaption>Verified incident context</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/mobile/evacuation-order.png" alt="Evacuation order">
-            <figcaption>Evacuation instructions</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/mobile/sos-active.png" alt="Active SOS">
-            <figcaption>SOS & location sharing</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container command-grid">
-        <div class="command-copy">
-          <span class="eyebrow">Command center</span>
-          <h2>The professional side of the same incident.</h2>
-          <p>
-            Operators can review incoming citizen reports, correlate observations, inspect
-            evidence, validate incidents and monitor active distress requests.
-          </p>
-          <ul class="check-list">
-            <li>Incoming report review</li>
-            <li>Spatial and temporal correlation concept</li>
-            <li>Incident validation workflow</li>
-            <li>Shared geospatial operational view</li>
-            <li>SOS monitoring and response context</li>
-          </ul>
-        </div>
-        <div class="dashboard-frame">
-          <img src="assets/screenshots/command-center/operational-dashboard.png" alt="IKHMAD command-center dashboard">
-        </div>
       </div>
 
-      <div class="container dashboard-grid">
-        <figure class="wide-shot">
-          <img src="assets/screenshots/command-center/report-correlation.png" alt="Citizen report correlation dashboard">
-          <figcaption>Report correlation & operator review</figcaption>
-        </figure>
-        <figure class="wide-shot">
-          <img src="assets/screenshots/command-center/sos-dashboard.png" alt="SOS command dashboard">
-          <figcaption>Active SOS coordination</figcaption>
-        </figure>
+
+      <div class="hero-visual">
+
+        <div class="hero-emblem">
+          <img
+            src="assets/branding/logo-2.png"
+            alt="IKHMAD emblem"
+          >
+        </div>
+
+        <div class="phone-card phone-back">
+          <img
+            src="assets/screenshots/mobile/incident-details.png"
+            alt="IKHMAD confirmed incident details"
+          >
+        </div>
+
+        <div class="phone-card phone-front">
+          <img
+            src="assets/screenshots/mobile/fire-map.png"
+            alt="IKHMAD wildfire map"
+          >
+        </div>
+
       </div>
-    </section>
 
-    <section class="section tech-section" id="technology">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">IKHMAD intelligence</span>
-          <h2>Designed around decisions, not just dots on a map.</h2>
-          <p>
-            The long-term technical differentiation sits between raw emergency information
-            and operational/user-facing decisions.
-          </p>
-        </div>
-
-        <div class="architecture">
-          <div class="arch-inputs">
-            <span>Citizen reports</span>
-            <span>Professional inputs</span>
-            <span>Weather & terrain</span>
-            <span>Satellite / sensors</span>
-            <span>Road & GIS data</span>
-          </div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-core">
-            <small>PROPRIETARY CORE</small>
-            <strong>IKHMAD Intelligence Layer</strong>
-            <p>Correlation · confidence · hazard evaluation · decision support</p>
-          </div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-outputs">
-            <span>Alerts</span>
-            <span>Incident assessment</span>
-            <span>Route safety</span>
-            <span>Safe-zone evaluation</span>
-          </div>
-        </div>
-
-        <div class="ip-note">
-          <strong>Public / private boundary.</strong>
-          This website and the public repository describe interfaces and product responsibilities.
-          Exact confidence formulas, calibrated thresholds, predictive routing internals,
-          hazard models and safe-zone scoring remain outside the public repository.
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="roadmap">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Development</span>
-          <h2>From prototype to institutional pilot.</h2>
-        </div>
-
-        <div class="roadmap">
-          <div class="roadmap-item complete">
-            <span>0</span>
-            <div><strong>Product prototype</strong><small>Citizen + command-center workflows</small></div>
-          </div>
-          <div class="roadmap-item">
-            <span>1</span>
-            <div><strong>Connected MVP</strong><small>Backend, realtime incidents, alerts & SOS</small></div>
-          </div>
-          <div class="roadmap-item">
-            <span>2</span>
-            <div><strong>Incident intelligence</strong><small>External data, GIS, correlation & confidence</small></div>
-          </div>
-          <div class="roadmap-item">
-            <span>3</span>
-            <div><strong>Predictive evacuation</strong><small>Hazard-aware routing & safe-zone evaluation</small></div>
-          </div>
-          <div class="roadmap-item">
-            <span>4</span>
-            <div><strong>Institutional pilot</strong><small>Controlled simulation and field validation</small></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cta-section">
-      <div class="container cta-card">
-        <div>
-          <span class="eyebrow">IKHMAD · إخماد</span>
-          <h2>Protecting forests. Supporting safer decisions.</h2>
-          <p>
-            The current version is a prototype under development and is not an operational
-            emergency service.
-          </p>
-        </div>
-        <div class="cta-actions">
-          <a class="button" href="README.md">Technical documentation</a>
-          <a class="button button-secondary" href="#top">Back to top</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <strong>IKHMAD | إخماد</strong>
-        <p>Wildfire Intelligence, Coordination & Evacuation Platform</p>
-      </div>
-      <div class="footer-note">
-        Prototype · 2026<br>
-        Demonstration data only · Not for operational emergency use
-      </div>
     </div>
-  </footer>
+  </section>
+
+
+  <!-- PLATFORM VALUES -->
+  <section class="trust-strip">
+    <div class="container trust-items">
+      <span>Citizen reporting</span>
+      <span>Professional validation</span>
+      <span>Operational alerts</span>
+      <span>Evacuation support</span>
+      <span>SOS coordination</span>
+    </div>
+  </section>
+
+
+  <!-- PROBLEM / SOLUTION -->
+  <section class="section" id="solution">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="eyebrow">The problem</span>
+
+        <h2>
+          Wildfire information is fragmented when every minute matters.
+        </h2>
+
+        <p>
+          Citizens may detect smoke before official confirmation. Emergency
+          operators receive information from different sources. Road conditions
+          may evolve while an evacuation is already underway.
+        </p>
+
+        <p>
+          IKHMAD is designed to connect these pieces into one coordinated
+          emergency workflow.
+        </p>
+      </div>
+
+
+      <div class="flow-grid">
+
+        <article class="flow-card">
+          <div class="number">01</div>
+          <h3>Report</h3>
+          <p>
+            Citizens and external sources contribute geolocated observations
+            and emergency context.
+          </p>
+        </article>
+
+        <article class="flow-card">
+          <div class="number">02</div>
+          <h3>Verify</h3>
+          <p>
+            Reports remain distinct from confirmed incidents and can be reviewed
+            by professional operators.
+          </p>
+        </article>
+
+        <article class="flow-card">
+          <div class="number">03</div>
+          <h3>Assess</h3>
+          <p>
+            The planned intelligence layer supports multi-source confidence and
+            hazard assessment.
+          </p>
+        </article>
+
+        <article class="flow-card">
+          <div class="number">04</div>
+          <h3>Alert</h3>
+          <p>
+            Citizens receive clear incident information and official safety
+            instructions.
+          </p>
+        </article>
+
+        <article class="flow-card">
+          <div class="number">05</div>
+          <h3>Evacuate</h3>
+          <p>
+            Future capabilities evaluate safer routes and destinations as
+            conditions evolve.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CITIZEN PROTOTYPE -->
+  <section class="section section-dark" id="prototype">
+    <div class="container">
+
+      <div class="section-heading light">
+        <span class="eyebrow eyebrow-light">Citizen experience</span>
+
+        <h2>
+          A single emergency journey, from awareness to action.
+        </h2>
+
+        <p>
+          The current prototype demonstrates the main citizen workflows using
+          synthetic and demonstration data.
+        </p>
+      </div>
+
+
+      <div class="mobile-gallery">
+
+        <figure>
+          <img
+            src="assets/screenshots/mobile/fire-map.png"
+            alt="Wildfire map"
+          >
+          <figcaption>Situational awareness</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/screenshots/mobile/incident-details.png"
+            alt="Confirmed wildfire incident details"
+          >
+          <figcaption>Verified incident context</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/screenshots/mobile/evacuation-order.png"
+            alt="Evacuation order"
+          >
+          <figcaption>Evacuation instructions</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/screenshots/mobile/sos-active.png"
+            alt="Active SOS"
+          >
+          <figcaption>SOS & location sharing</figcaption>
+        </figure>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- COMMAND CENTER -->
+  <section class="section" id="command-center">
+
+    <div class="container command-grid">
+
+      <div class="command-copy">
+
+        <span class="eyebrow">Command center</span>
+
+        <h2>
+          The professional side of the same incident.
+        </h2>
+
+        <p>
+          IKHMAD's command-center concept gives emergency operators a shared
+          geospatial view of citizen observations, incident status, operational
+          context and active distress requests.
+        </p>
+
+        <ul class="check-list">
+          <li>Incoming citizen report review</li>
+          <li>Spatial and temporal correlation concept</li>
+          <li>Incident validation workflow</li>
+          <li>Shared operational mapping</li>
+          <li>SOS monitoring and response context</li>
+        </ul>
+
+      </div>
+
+
+      <div class="dashboard-frame">
+        <img
+          src="assets/screenshots/command-center/operational-dashboard.png"
+          alt="IKHMAD command-center operational dashboard"
+        >
+      </div>
+
+    </div>
+
+
+    <div class="container dashboard-grid">
+
+      <figure class="wide-shot">
+        <img
+          src="assets/screenshots/command-center/report-correlation.png"
+          alt="IKHMAD report correlation dashboard"
+        >
+        <figcaption>Report correlation & operator review</figcaption>
+      </figure>
+
+      <figure class="wide-shot">
+        <img
+          src="assets/screenshots/command-center/sos-dashboard.png"
+          alt="IKHMAD SOS command dashboard"
+        >
+        <figcaption>Active SOS coordination</figcaption>
+      </figure>
+
+    </div>
+
+  </section>
+
+
+  <!-- TECHNOLOGY -->
+  <section class="section tech-section" id="technology">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="eyebrow">IKHMAD intelligence</span>
+
+        <h2>
+          Designed around decisions, not just dots on a map.
+        </h2>
+
+        <p>
+          The long-term technical differentiation of IKHMAD sits between raw
+          emergency information and operational or citizen-facing decisions.
+        </p>
+      </div>
+
+
+      <div class="architecture">
+
+        <div class="arch-inputs">
+          <span>Citizen reports</span>
+          <span>Professional inputs</span>
+          <span>Weather & terrain</span>
+          <span>Satellite / sensors</span>
+          <span>Road & GIS data</span>
+        </div>
+
+        <div class="arch-arrow">→</div>
+
+        <div class="arch-core">
+          <img
+            src="assets/branding/logo-2.png"
+            alt=""
+            class="arch-logo"
+          >
+
+          <small>PROPRIETARY CORE</small>
+
+          <strong>IKHMAD Intelligence Layer</strong>
+
+          <p>
+            Correlation · confidence · hazard evaluation · decision support
+          </p>
+        </div>
+
+        <div class="arch-arrow">→</div>
+
+        <div class="arch-outputs">
+          <span>Incident assessment</span>
+          <span>Alerts</span>
+          <span>Route safety</span>
+          <span>Safe-zone evaluation</span>
+        </div>
+
+      </div>
+
+
+      <div class="ip-note">
+        <strong>Public / private technology boundary.</strong>
+        The public project describes system interfaces and responsibilities.
+        Exact confidence formulas, calibrated thresholds, hazard models,
+        predictive-routing internals and safe-zone scoring remain outside the
+        public repository.
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ROADMAP -->
+  <section class="section section-soft" id="roadmap">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="eyebrow">Development roadmap</span>
+
+        <h2>
+          From product prototype to institutional pilot.
+        </h2>
+      </div>
+
+
+      <div class="roadmap">
+
+        <div class="roadmap-item complete">
+          <span>0</span>
+          <div>
+            <strong>Product prototype</strong>
+            <small>Citizen + command-center workflows</small>
+          </div>
+        </div>
+
+        <div class="roadmap-item">
+          <span>1</span>
+          <div>
+            <strong>Connected MVP</strong>
+            <small>Backend, realtime incidents, alerts & SOS</small>
+          </div>
+        </div>
+
+        <div class="roadmap-item">
+          <span>2</span>
+          <div>
+            <strong>Incident intelligence</strong>
+            <small>External data, GIS, correlation & confidence</small>
+          </div>
+        </div>
+
+        <div class="roadmap-item">
+          <span>3</span>
+          <div>
+            <strong>Predictive evacuation</strong>
+            <small>Hazard-aware routing & safe-zone evaluation</small>
+          </div>
+        </div>
+
+        <div class="roadmap-item">
+          <span>4</span>
+          <div>
+            <strong>Institutional pilot</strong>
+            <small>Controlled simulation and field validation</small>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container cta-card">
+
+      <div class="cta-brand">
+        <img
+          src="assets/branding/logo-1.png"
+          alt="IKHMAD"
+          class="cta-logo"
+        >
+
+        <h2>
+          Protecting forests. Supporting safer decisions.
+        </h2>
+
+        <p>
+          IKHMAD is currently a prototype under development and is not an
+          operational emergency service.
+        </p>
+      </div>
+
+      <div class="cta-actions">
+        <a class="button" href="README.md">
+          Technical documentation
+        </a>
+
+        <a class="button button-secondary" href="#top">
+          Back to top
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <img
+        src="assets/branding/logo-1.png"
+        alt="IKHMAD"
+        class="footer-logo"
+      >
+
+      <p>
+        Wildfire Intelligence, Coordination & Evacuation Platform
+      </p>
+    </div>
+
+    <div class="footer-note">
+      Prototype · 2026<br>
+      Demonstration data only · Not for operational emergency use
+    </div>
+
+  </div>
+</footer>
+
 </body>
 </html>
