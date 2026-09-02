@@ -1,0 +1,14 @@
+{
+  "incidentId": "IKH-2026-00142",
+  "recommendation": "EVACUATE",
+  "destination": {
+    "safeZoneId": "SZ-ALGIERS-DEMO-02",
+    "name": "Demo Safe Zone B"
+  },
+  "route": {
+    "status": "AVAILABLE",
+    "etaMinutes": 18,
+    "riskLabel": "LOWER_RISK"
+  },
+  "note": "Synthetic public example. Proprietary route-scoring logic is not included."
+}

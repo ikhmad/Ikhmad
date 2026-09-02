@@ -1,0 +1,12 @@
+{
+  "incidentId": "IKH-2026-00142",
+  "status": "UNDER_REVIEW",
+  "type": "SMOKE_OR_FIRE",
+  "location": {
+    "latitude": 36.7538,
+    "longitude": 3.0588
+  },
+  "reportedAt": "2026-09-02T14:30:00Z",
+  "publicConfidenceLabel": "PENDING",
+  "sourceCount": 1
+}

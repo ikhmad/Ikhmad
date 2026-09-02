@@ -1,0 +1,7 @@
+{
+  "alertId": "ALT-2026-00021",
+  "severity": "HIGH",
+  "title": "Wildfire warning",
+  "message": "A wildfire incident may affect your area. Follow official safety instructions.",
+  "incidentId": "IKH-2026-00142"
+}

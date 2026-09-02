@@ -1,0 +1,10 @@
+{
+  "sosId": "SOS-2026-00009",
+  "status": "RECEIVED",
+  "location": {
+    "latitude": 36.7541,
+    "longitude": 3.0602
+  },
+  "createdAt": "2026-09-02T14:41:00Z",
+  "incidentId": "IKH-2026-00142"
+}
