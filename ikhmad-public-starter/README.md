@@ -1,188 +1,307 @@
-# IKHMAD
+# IKHMAD | إخماد
 
-**Wildfire Intelligence, Coordination & Evacuation Platform**
+<div align="center">
 
-> Current status: High-fidelity product prototype / pre-MVP.
+### Wildfire Intelligence, Coordination & Evacuation Platform
 
-IKHMAD is a wildfire intelligence and emergency coordination platform designed to connect citizens, operators, geospatial data, alerts, incident workflows and future predictive evacuation capabilities in one system.
+**From early reporting to coordinated evacuation — one shared operational picture for citizens and responders.**
 
-This public repository documents the product direction, public architecture, API contracts, sample data models and demonstration code. It intentionally does **not** contain the proprietary decision logic, calibrated risk models, source-reliability rules, predictive hazard implementation or confidential production infrastructure.
+**Current stage:** High-fidelity interactive prototype · Pre-MVP
 
-## Product vision
+</div>
 
-IKHMAD aims to support the full emergency chain:
+---
 
-**Detection → Reporting → Verification → Risk assessment → Alerting → Coordination → Evacuation → Continuous reassessment**
+## 🌲 The Challenge
 
-The platform is designed around two main user surfaces:
+Wildfires evolve quickly. Information can arrive from different sources at different times, while citizens need clear guidance and emergency operators need a reliable operational picture.
 
-- **Citizen application** — incident reporting, alerts, risk awareness, SOS, evacuation guidance and safety information.
-- **Command-center dashboard** — incident review, validation, operational map, reports, alerts, response coordination and future decision-support tools.
+IKHMAD is designed to connect citizen observations, professional incident review, geospatial information, alerts, SOS, evacuation workflows and future decision-support services.
 
-## Current prototype
+> **IKHMAD does not replace official emergency services.** It is designed as a digital coordination and decision-support layer supporting authorized emergency actors and the public.
 
-The current product prototype demonstrates:
-
-- citizen onboarding and location-aware home experience;
-- wildfire map and incident details;
-- citizen fire reporting;
-- incident status / verification flow;
-- emergency alerts;
-- SOS workflow;
-- evacuation guidance and safe-zone experience;
-- dynamic rerouting concept;
-- professional command-center incident management;
-- citizen ↔ operator workflow concept.
-
-> The current prototype demonstrates intended system behavior. Production backend integrations and proprietary intelligence engines are part of the staged MVP roadmap.
-
-## Public architecture
+## 🛡️ The Platform
 
 ```text
- Citizens                         Operators
-    |                                |
-    v                                v
-Mobile App                    Command Dashboard
-      \                            /
-       \                          /
-             Public API Layer
-                   |
-       +-----------+-----------+
-       |           |           |
-       v           v           v
-   Incidents     Alerts        SOS
-       |
-       v
-+--------------------------------------+
-|       IKHMAD INTELLIGENCE LAYER      |
-|          Proprietary Core            |
-+--------------------------------------+
-       |
-+------+----------------------+---------+
-|                             |         |
-v                             v         v
-GIS / Geospatial          Routing    Safe Zones
-Services                  Interface   Interface
-       |
-       v
-   Data Platform
-       |
-+------+----------+-----------+--------+
-|                 |           |        |
-v                 v           v        v
-Satellite      Weather    Road/GIS   Other Sources
+Detection
+   ↓
+Citizen / External Reporting
+   ↓
+Correlation & Verification
+   ↓
+Incident Assessment
+   ↓
+Alerting
+   ↓
+Evacuation Decision Support
+   ↓
+Safe Route / Safe-Zone Guidance
+   ↓
+Continuous Reassessment
 ```
 
-## Repository scope
+IKHMAD has two complementary interfaces: a **citizen mobile application** and a **professional command-center dashboard**.
 
-### Included publicly
+## 📱 Citizen Experience
 
-- product and system overview;
-- public architecture;
-- citizen and command-center workflows;
-- API interface contracts;
-- basic public data models;
-- synthetic examples;
-- demonstration / mock code;
-- roadmap;
-- security and privacy principles.
+### Wildfire situational awareness
 
-### Intentionally not included
+The map distinguishes official/confirmed incidents, community information and system information while presenting relevant risk context.
 
-- incident confidence formulas;
-- calibrated thresholds;
-- source-reliability scoring;
-- wildfire hazard prediction internals;
-- predictive evacuation algorithm internals;
+<p align="center">
+  <img src="assets/screenshots/mobile/fire-map.png" width="300" alt="IKHMAD wildfire map">
+  &nbsp;&nbsp;
+  <img src="assets/screenshots/mobile/incident-details.png" width="300" alt="IKHMAD confirmed incident details">
+</p>
+
+The incident view makes **source provenance explicit**: professional confirmation, system assessment and unverified citizen observations are distinct.
+
+### Citizen reporting
+
+Citizen observations enter an analysis/review workflow rather than automatically becoming confirmed incidents.
+
+<p align="center">
+  <img src="assets/screenshots/mobile/report-submitted.png" width="300" alt="IKHMAD citizen report submitted">
+</p>
+
+### Alerts & evacuation
+
+IKHMAD is designed to connect incident information to actionable safety guidance.
+
+<p align="center">
+  <img src="assets/screenshots/mobile/alerts.png" width="300" alt="IKHMAD emergency alerts">
+  &nbsp;&nbsp;
+  <img src="assets/screenshots/mobile/evacuation-order.png" width="300" alt="IKHMAD evacuation order">
+</p>
+
+The prototype demonstrates differentiated alert states, official evacuation instructions, routes/zones to avoid and recommended safe destinations.
+
+### SOS / distress assistance
+
+<p align="center">
+  <img src="assets/screenshots/mobile/sos-request.png" width="300" alt="IKHMAD SOS request">
+  &nbsp;&nbsp;
+  <img src="assets/screenshots/mobile/sos-active.png" width="300" alt="IKHMAD active SOS">
+</p>
+
+The SOS experience can communicate location, number of persons, vulnerability information and emergency context.
+
+## 🖥️ Command-Center Experience
+
+### Operational picture
+
+<p align="center">
+  <img src="assets/screenshots/command-center/operational-dashboard.png" width="900" alt="IKHMAD command center operational dashboard">
+</p>
+
+The command center brings incidents, citizen reports, alert zones, source information and operational context into a shared geospatial view.
+
+### Report correlation & review
+
+<p align="center">
+  <img src="assets/screenshots/command-center/report-correlation.png" width="900" alt="IKHMAD citizen report correlation">
+</p>
+
+The public prototype illustrates spatial proximity, temporal proximity and observation consistency. The proprietary correlation/confidence implementation is **not published here**.
+
+### SOS management
+
+<p align="center">
+  <img src="assets/screenshots/command-center/sos-dashboard.png" width="900" alt="IKHMAD SOS command dashboard">
+</p>
+
+```text
+CITIZEN                              COMMAND CENTER
+
+Report fire  ──────────────────────► Incoming report
+                                         ↓
+                                  Review / correlation
+                                         ↓
+                                  Incident validation
+                                         │
+Alert / guidance ◄───────────────────────┘
+
+SOS + location ────────────────────► Distress dashboard
+```
+
+## 🧠 IKHMAD Intelligence Layer
+
+Planned inputs include citizen reports, professional inputs, satellite/sensor observations, weather/terrain information and road/GIS data.
+
+The proprietary intelligence layer is intended to support:
+
+- multi-source incident correlation;
+- source provenance and confidence assessment;
+- dynamic hazard evaluation;
+- risk-aware evacuation support;
+- route-safety evaluation;
+- safe-zone evaluation;
+- event-driven reassessment as conditions change.
+
+### 🔒 Proprietary technology boundary
+
+This public repository intentionally does **not** publish:
+
+- exact confidence formulas;
+- calibrated source-reliability rules;
+- operational thresholds;
+- hazard-prediction internals;
+- predictive route-scoring algorithms;
 - future-road traversability calculations;
-- safe-zone scoring logic;
+- safe-zone ranking formulas;
 - anti-fraud / false-report models;
-- private datasets and calibration data;
-- production credentials or infrastructure secrets.
+- calibration datasets;
+- unreleased patent-sensitive mechanisms.
 
-These components belong to IKHMAD's confidential / proprietary technology layer and may be subject to future trade-secret and/or patent protection.
+See [`docs/IP_BOUNDARY.md`](docs/IP_BOUNDARY.md).
 
-## Repository structure
+## 🏗️ Public Architecture
 
 ```text
-ikhmad/
-├── README.md
-├── CHANGELOG.md
-├── CONTRIBUTING.md
-├── COPYRIGHT.md
-├── SECURITY.md
-├── docs/
-│   ├── PRODUCT_OVERVIEW.md
-│   ├── ARCHITECTURE.md
-│   ├── CITIZEN_WORKFLOW.md
-│   ├── COMMAND_CENTER_WORKFLOW.md
-│   ├── INCIDENT_LIFECYCLE.md
-│   ├── EVACUATION_OVERVIEW.md
-│   ├── DATA_SOURCES.md
-│   ├── SECURITY_PRIVACY.md
-│   ├── IP_BOUNDARY.md
-│   └── ROADMAP.md
-├── api/
-│   └── openapi-public.yaml
-├── examples/
-│   ├── incident-example.json
-│   ├── alert-example.json
-│   ├── sos-example.json
-│   └── evacuation-example.json
-└── demo/
-    ├── package.json
-    └── src/
-        ├── models.js
-        └── simulation.js
+ Citizens                           Emergency Operators
+    │                                      │
+    ▼                                      ▼
+Mobile Application                 Command Dashboard
+      \                                  /
+       \                                /
+              IKHMAD API Layer
+                     │
+       ┌─────────────┼─────────────┐
+       ▼             ▼             ▼
+   Incidents       Alerts          SOS
+       │
+       ▼
+┌───────────────────────────────────────────┐
+│          IKHMAD INTELLIGENCE LAYER       │
+│              Proprietary Core            │
+└───────────────────────────────────────────┘
+       │
+       ├──────────────┬──────────────┐
+       ▼              ▼              ▼
+  Geospatial       Routing       Safe Zones
+   Services        Interface      Interface
+       │
+       ▼
+    Data Layer
+       │
+ GIS · Weather · Satellite · Roads · External Sources
 ```
 
-## Development status legend
+This defines the current **public system boundary**, not a claim that every service is already operational.
 
-Throughout this repository:
+See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
-- ✅ **Implemented / demonstrated**
-- 🟡 **Prototype / mocked**
-- ⏳ **Planned**
-- 🔒 **Proprietary / private**
+## 🧪 Current Prototype
 
-## Roadmap snapshot
+**Demonstrated**
 
-| Phase | Scope | Status |
+- ✅ Citizen mobile UX
+- ✅ Command-center UX
+- ✅ Wildfire map and incident details
+- ✅ Citizen fire-reporting workflow
+- ✅ Report review / correlation concept
+- ✅ Incident validation workflow
+- ✅ Alert workflow
+- ✅ Evacuation-order workflow
+- ✅ SOS workflow
+- ✅ Professional SOS monitoring
+- ✅ Dynamic evacuation/rerouting product concept
+
+**Planned production capability**
+
+- ⏳ Production authentication and authorization
+- ⏳ Persistent operational backend
+- ⏳ Real-time mobile ↔ command-center synchronization
+- ⏳ Production GIS infrastructure
+- ⏳ Operational external-data integrations
+- ⏳ Validated multi-source intelligence engine
+- ⏳ Predictive wildfire/hazard model
+- ⏳ Production risk-aware routing
+- ⏳ Institutional field validation
+
+The prototype demonstrates **intended system behavior and user workflows**. Simulated behavior must not be interpreted as a deployed emergency capability.
+
+## 🔌 Public API Direction
+
+The preliminary public API contract includes interfaces such as:
+
+```text
+POST /api/v1/incidents
+GET  /api/v1/incidents/{id}
+POST /api/v1/sos
+GET  /api/v1/alerts
+GET  /api/v1/hazards
+POST /api/v1/routes/evaluate
+GET  /api/v1/safe-zones
+```
+
+See [`api/openapi-public.yaml`](api/openapi-public.yaml) and synthetic examples in [`examples/`](examples/).
+
+## 🚀 Development Roadmap
+
+| Phase | Objective | Status |
 |---|---|---|
-| Phase 0 | High-fidelity citizen + command-center prototype | ✅ |
-| Phase 1 | Connected MVP: auth, incident API, SOS, alerts, realtime events | ⏳ |
-| Phase 2 | Multi-source incident intelligence + external data integration | ⏳ |
-| Phase 3 | Predictive evacuation + dynamic hazard-aware routing | ⏳ |
-| Phase 4 | Institutional pilot + field validation | ⏳ |
+| **0 — Product Prototype** | Citizen + command-center workflows | ✅ Prototype |
+| **1 — Connected MVP** | Backend, persistence, realtime incidents, alerts & SOS | ⏳ Planned |
+| **2 — Incident Intelligence** | External data, GIS, correlation & confidence services | ⏳ Planned |
+| **3 — Predictive Evacuation** | Hazard-aware routing, safe-zone evaluation & reassessment | ⏳ Planned |
+| **4 — Institutional Pilot** | Controlled pilot, simulation and field validation | ⏳ Planned |
+| **5 — Scale** | Multi-region deployment and institutional integrations | ⏳ Planned |
 
-See [`docs/ROADMAP.md`](docs/ROADMAP.md).
+Full roadmap: [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
-## Intellectual property
+## 🔐 Intellectual-Property Strategy
 
-IKHMAD's brand, original software, documentation, visual assets and proprietary technology are intended to remain controlled by the project/company.
+IKHMAD uses a layered approach:
 
-This repository is public for transparency, technical communication and development history. Publication of a file here does not mean that all IKHMAD technology has been disclosed.
+- **Public architecture/interfaces** communicate the product and integration boundaries.
+- **Copyright** protects original software, documentation and project assets.
+- **Confidential know-how / trade secrets** can protect calibrated models, thresholds and selected decision logic.
+- **Patent assessment** may cover selected technical mechanisms before detailed public disclosure.
+- **Brand protection** may separately cover IKHMAD / إخماد and associated brand assets.
 
 See [`COPYRIGHT.md`](COPYRIGHT.md) and [`docs/IP_BOUNDARY.md`](docs/IP_BOUNDARY.md).
 
-## Security
+## 🛡️ Security & Privacy
 
-Never commit:
+IKHMAD's design principles include data minimization, controlled operator access, auditability, secure communications, source provenance and protection of sensitive location information.
 
-- API keys;
-- passwords;
-- private keys;
-- production URLs with embedded credentials;
-- personal emergency data;
-- real citizen location histories;
-- confidential institutional data.
+Never commit real citizen emergency data, credentials, private keys or production secrets to this public repository.
 
-See [`SECURITY.md`](SECURITY.md).
+See [`SECURITY.md`](SECURITY.md) and [`docs/SECURITY_PRIVACY.md`](docs/SECURITY_PRIVACY.md).
 
-## Contact
+## 📚 Documentation
 
-Project: **IKHMAD**
+| Document | Purpose |
+|---|---|
+| [`Product Overview`](docs/PRODUCT_OVERVIEW.md) | Product vision and users |
+| [`Architecture`](docs/ARCHITECTURE.md) | Public system architecture |
+| [`Citizen Workflow`](docs/CITIZEN_WORKFLOW.md) | Citizen-side journeys |
+| [`Command Center Workflow`](docs/COMMAND_CENTER_WORKFLOW.md) | Professional workflows |
+| [`Incident Lifecycle`](docs/INCIDENT_LIFECYCLE.md) | Incident states |
+| [`Evacuation Overview`](docs/EVACUATION_OVERVIEW.md) | Public evacuation architecture |
+| [`Data Sources`](docs/DATA_SOURCES.md) | Planned data categories |
+| [`Security & Privacy`](docs/SECURITY_PRIVACY.md) | Security principles |
+| [`IP Boundary`](docs/IP_BOUNDARY.md) | Public vs proprietary technology |
+| [`Roadmap`](docs/ROADMAP.md) | Development phases |
+| [`Public API`](api/openapi-public.yaml) | Preliminary API contract |
 
-Status: Prototype / pre-MVP
+## ⚠️ Prototype Disclaimer
+
+IKHMAD is currently under development. Screens, scenarios, incident identifiers, locations, system assessments and operational workflows shown in this repository may contain **demonstration or synthetic data**. They must not be interpreted as real emergency information or instructions from public authorities.
+
+In a real emergency, users must follow instructions issued by authorized emergency services and competent public authorities.
+
+---
+
+<div align="center">
+
+## IKHMAD | إخماد
+
+**Protecting forests. Supporting safer decisions.**
+
+Prototype · 2026
 
 Copyright © 2026 IKHMAD. All rights reserved.
+
+</div>
